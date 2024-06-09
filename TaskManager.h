@@ -10,14 +10,16 @@ using namespace std;
 
 class TaskManager
 {
-	void addTask(const Task& task)
-	{};
-	void removeTask(int id) 
-	{};
-	Task* getTask(int id) 
-	{};
-	vector<Task> getAllTasks() 
-	{};
+private:
+	
+	static int id;
+
+public:
+
+	void addTask(const Task& task);
+	void removeTask(int id);
+	Task* getTask(int id);
+	vector<Task> getAllTasks();
 };
 
 

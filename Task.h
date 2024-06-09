@@ -12,6 +12,7 @@ public:
 	string title;
 	string description;
 	string status;
+	vector<Task> tasks;
 	Task(int id, string title, string description, string status);
 	void info();
 
