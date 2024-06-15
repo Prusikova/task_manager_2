@@ -15,7 +15,7 @@ void main()
 	string status;
 	vector<Task> tasks;
 	TaskManager taskManager;
-
+	
 	char key;
 	cout << "Task Manager Application" << endl;
 	cout << endl;
@@ -31,10 +31,10 @@ void main()
 	{
 	case 'a':
 	{
-		Task newTask(id, title, description, status);
+		Task task(++id, title, description, status);
 
-		taskManager.addTask(newTask);
-		newTask.info();
+		taskManager.addTask(task);
+		task.info();
 		break;
 	}
 	case 'b':

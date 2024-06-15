@@ -5,36 +5,12 @@
 #include"TaskManager.h"
 using namespace std;
 
-Task::Task(int id, string title, string description, string status)
-{
-	this->id = id;
-	this->title = title;
-	this->description = description;
-	this->status = status;
+Task::Task(int id, const string& title, const string& description, const string& status)
+	: id(id), title(title), description(description), status(status) {}
 
 
-}
- 
-void Task::task()
-{
-	static int id = 0;
-	string title;
-	string description;
-	string status;
-	
-	/*cout << "Enter the title: " << endl;
-	cin >> title;
-	
-	cout << "Enter description of your task: " << endl;
-	cin >> description;
 
-	cout << "Enter status of your task: " << endl;
-	cin >> status;
-	
-	Task newTask(++id, title, description, status);*/
-	Task newTask(++id, title, description, status);
-}
-void Task::info()
+void Task::info() const
 {
 
 	cout << "Task " << id << "\nTitle: " << title << "\nDescription: " << description << "\nStatus: " << status << endl;

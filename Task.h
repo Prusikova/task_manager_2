@@ -6,21 +6,20 @@
 using namespace std;
 
 class Task
-{
-public:
+{private:
 	int id;
-	int getId() const 
-	{
-		return id;
-	}
 	string title;
 	string description;
 	string status;
-	//vector<Task> tasks();
-	Task(int id, string title, string description, string status);
-	void info();
+public:
+	
+	Task(int id, const string& title, const string& description, const string& status);
+	void info() const;
 	void task();
-
+	int getId() const
+	{
+		return id;
+	}
 };
 
 
