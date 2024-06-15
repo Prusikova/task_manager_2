@@ -16,6 +16,8 @@ private:
 	
 public:
 
+	TaskManager();
+
 	void addTask(const Task& task);
 	void removeTask(int id);
 	Task* getTask(int id) const;

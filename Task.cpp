@@ -17,21 +17,22 @@ Task::Task(int id, string title, string description, string status)
  
 void Task::task()
 {
-	int id = 0;
+	static int id = 0;
 	string title;
 	string description;
 	string status;
-	Task newTask(id, title, description, status);
-	newTask.id = Task::id;
-	cout << "Enter the title: " << endl;
+	
+	/*cout << "Enter the title: " << endl;
 	cin >> title;
-
+	
 	cout << "Enter description of your task: " << endl;
 	cin >> description;
 
 	cout << "Enter status of your task: " << endl;
 	cin >> status;
-
+	
+	Task newTask(++id, title, description, status);*/
+	Task newTask(++id, title, description, status);
 }
 void Task::info()
 {
