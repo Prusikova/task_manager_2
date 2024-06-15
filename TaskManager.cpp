@@ -10,41 +10,48 @@ using namespace std;
 
 TaskManager::TaskManager()
 {
-	
+	void addTask(const Task & task);
+	void removeTask(int id);
+	Task* getTask(int id);
+	vector<Task> getAllTasks();
 
 }
 
-
+vector<Task> tasks;
 
 void TaskManager::addTask(const Task& task)
 {
-	Task newTask(id, title, description, status);
-	newTask.id = Task::id;
-	cout << "Enter the title: " << endl;
-	cin >> title;
-
-	cout << "Enter description of your task: " << endl;
-	cin >> description;
-
-	cout << "Enter status of your task: " << endl;
-	cin >> status;
-
-	tasks.push_back(newTask);
+	
+	tasks.push_back(task);
 	
 }
 
 void TaskManager::removeTask(int id)
 {
-	cout << "Enter id of task: " << endl;
-	cin >> id;
-	int removeId = id - 1;
-	auto it = std::find(tasks.begin(), tasks.end(), removeId);
+	auto it = find_if(tasks.begin(), tasks.end(), [id](const Task& task){
+		return task.getId() == id; 
+		});
+
 	if (it != tasks.end()) {
 		tasks.erase(it);
+		cout << "Task with id " << id << " has been removed." << endl;
 	}
-	else
-	{
-		cout << "task number " << id << "doesn't exist" << endl;
+	else {
+		cout << "Task with id " << id << " doesn't exist." << endl;
 	}
 }
 
+Task* TaskManager::getTask() const {
+	for (const auto& task : tasks) {
+		if (task.getId() == id) {
+			return &task; 
+		}
+	}
+	return nullptr; 
+}
+
+
+vector<Task> TaskManager::getAllTasks() 
+{
+	return tasks;
+}

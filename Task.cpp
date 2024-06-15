@@ -2,7 +2,7 @@
 #include<vector>
 
 #include"Task.h"
-
+#include"TaskManager.h"
 using namespace std;
 
 Task::Task(int id, string title, string description, string status)
@@ -15,12 +15,13 @@ Task::Task(int id, string title, string description, string status)
 
 }
  
-void Task::info()
+void Task::task()
 {
-
-	cout << "Task " << id << "\nTitle: " << title <<"\nDescription: "<<description<<"\nStatus: "<<status<< endl;
-
-	/*Task newTask(id, title, description, status);
+	int id = 0;
+	string title;
+	string description;
+	string status;
+	Task newTask(id, title, description, status);
 	newTask.id = Task::id;
 	cout << "Enter the title: " << endl;
 	cin >> title;
@@ -31,5 +32,10 @@ void Task::info()
 	cout << "Enter status of your task: " << endl;
 	cin >> status;
 
-	tasks.push_back(newTask);*/
 }
+void Task::info()
+{
+
+	cout << "Task " << id << "\nTitle: " << title << "\nDescription: " << description << "\nStatus: " << status << endl;
+}
+
