@@ -41,13 +41,16 @@ void TaskManager::removeTask(int id)
 	}
 }
 
-Task* TaskManager::getTask() const {
-	for (const auto& task : tasks) {
-		if (task.getId() == id) {
-			return &task; 
-		}
+Task* TaskManager::getTask(int id) const {
+	auto it = std::find_if(tasks.begin(), tasks.end(), [id](const Task& task){
+		return task.getId() == id;
+		});
+
+	if (it != tasks.end())
+	{
+		return &(*it); 
 	}
-	return nullptr; 
+	return nullptr;
 }
 
 

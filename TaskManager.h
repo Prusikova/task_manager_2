@@ -13,12 +13,12 @@ class TaskManager
 private:
 	
 	static int id;
-
+	
 public:
 
 	void addTask(const Task& task);
 	void removeTask(int id);
-	Task* getTask(int id);
+	Task* getTask(int id) const;
 	vector<Task> getAllTasks();
 };
 

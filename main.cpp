@@ -8,6 +8,7 @@ using namespace std;
 
 void main()
 {
+	setlocale(LC_ALL, "ru");
 	int id;
 	string title;
 	string description;
